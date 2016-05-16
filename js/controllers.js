@@ -98,7 +98,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.performAction = function(action, result) {
 
         // FOR EDIT
-        if (action.jsonPage == "editUser") {
+        if (action.jsonPage) {
 
             var pageURL = action.jsonPage;
             if (action.fieldsToSend) {
@@ -109,8 +109,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $state.go("page", {
                 jsonName: pageURL
             });
-
-
         }
     };
 
@@ -396,6 +394,16 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("API");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+})
+
+.controller('onlyViewPageCtrl', function($scope, TemplateService) {
+  $scope.template = TemplateService.changecontent("onlyView");
+  $scope.menutitle = NavigationService.makeactive("Users");
+  TemplateService.title = $scope.menutitle;
+  $scope.navigation = NavigationService.getnav();
+  $scope.viewEditPage=function(pageName) {
+console.log("jhi");
+  }
 })
 
 .controller('HeaderCtrl', function($scope, TemplateService) {

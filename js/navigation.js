@@ -41,8 +41,6 @@ var navigationservice = angular.module('navigationservice', [])
       $http.post(adminurl + apiName,pagination).success(successCallback).error(errorCallback);
     },
     findOneProject: function(apiName,urlParams, successCallback, errorCallback) {
-      console.log(apiName);
-      console.log(urlParams);
       $http.post(adminurl + apiName,urlParams).success(successCallback).error(errorCallback);
     },
     // saveApi: function(data, successCallback, errorCallback) {
