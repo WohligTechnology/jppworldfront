@@ -9,19 +9,9 @@
         "tableRef":"name"
       },
       {
-        "name":"Email",
+        "name":"Army Name",
         "isSort":"",
-        "tableRef":"email"
-      },
-      {
-        "name":"Accesslevel",
-        "isSort":"",
-        "tableRef":"accesslevel"
-      },
-      {
-        "name":"Team",
-        "isSort":"",
-        "tableRef":"team.name"
+        "tableRef":"armyname"
       }
 
     ],
@@ -30,16 +20,25 @@
         "name":"edit",
         "icon":"mode_edit",
         "color":"blue",
-        "action":"editUser",
+        "action":"redirect",
         "jsonPage":"editUser",
         "fieldsToSend":["_id","name"],
-        "callFindOne":"creato/findOne"
+        "callFindOne":"user/getOne"
       },
       {
         "name":"delete",
         "icon":"delete",
         "color":"red",
-        "action":"deleteUser"
+        "action":"apiCallConfirm",
+        "title":"Delete User",
+        "content":"Are you sure you want to delete user?",
+        "api":"user/delete",
+        "fieldsToSend":[
+          {
+            "name":"_id",
+            "value":"_id"
+          }
+        ]
       },
       {
         "name":"print",
@@ -75,7 +74,7 @@
       }
     ],
     "apiCall": {
-        "url": "creato/findLimited",
+        "url": "user/findLimited",
         "params": ""
     },
     "createButtonState":"page({jsonName:'createUser'})"

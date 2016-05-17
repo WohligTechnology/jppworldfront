@@ -1,6 +1,6 @@
 {
     "title": "Create User",
-      "jsonPage":"userView",
+    "jsonPage": "userView",
     "desciption": "",
     "pageType": "create",
     "fields": [{
@@ -12,56 +12,63 @@
             "validation": ["required", "trim", "unique"],
             "url": ""
         }, {
-            "name": "Email",
-            "type": "email",
-            "tableRef": "email",
-            "placeholder": "Enter email",
-            "id": "input2",
+            "name": "Army Name",
+            "type": "text",
+            "tableRef": "armyName",
+            "placeholder": "Enter Army Name",
+            "id": "input3",
             "validation": ["required", "trim", "unique"],
             "url": ""
         }, {
-            "name": "Accesslevel",
-            "type": "select",
-            "tableRef": "accesslevel",
-            "placeholder": "Enter accesslevel",
-            "id": "input3",
-            "validation": [],
-            "url": [{
-              "value":"admin",
-                "name": "Admin"
-            }, {
-              "value":"operator",
-                "name": "Operator"
-            }]
-        }, {
-            "name": "Team",
-            "type": "selectFromTable",
-            "tableRef": "team",
-            "placeholder": "Choose team",
+            "name": "Friend1",
+            "type": "text",
+            "tableRef": "friend1",
+            "placeholder": "Enter friend1",
             "id": "input4",
-            "model": "team",
-            "validation": [],
-            "url": [{
-                "_id": "572ca0bb96ef92d30fc29894",
-                "name": "Aus"
-            }, {
-                "_id": "572ca0d796ef92d30fc29895",
-                "name": "Pakistan"
-            }, {
-                "_id": "573025eb42975d94058789de",
-                "name": "KKR"
-            }]
+            "validation": ["required", "trim", "unique"],
+            "url": ""
         }, {
-            "name": "Image",
-            "type": "image",
-            "tableRef": "image",
-            "placeholder": "Enter image",
-            "id": "input5",
-            "model": "",
-            "validation": [],
-            "url": "",
-            "model":"image1"
-        }
+            "name": "Friend2",
+            "type": "text",
+            "tableRef": "friend2",
+            "placeholder": "Enter friend2",
+            "id": "input4",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Friend3",
+            "type": "text",
+            "tableRef": "friend3",
+            "placeholder": "Enter friend3",
+            "id": "input4",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Friend4",
+            "type": "text",
+            "tableRef": "friend4",
+            "placeholder": "Enter friend4",
+            "id": "input4",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Friend5",
+            "type": "text",
+            "tableRef": "friend5",
+            "placeholder": "Enter friend5",
+            "id": "input4",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Friend6",
+            "type": "text",
+            "tableRef": "friend6",
+            "placeholder": "Enter friend6",
+            "id": "input4",
+            "validation": ["required", "trim", "unique"],
+            "url": ""
+        },
+
 
     ],
     "action": [{
@@ -69,11 +76,11 @@
         "action": "submitUser"
     }, {
         "name": "cancel",
-        "stateName":"page({jsonName:'userView'})"
+        "stateName": "page({jsonName:'userView'})"
     }],
 
     "apiCall": {
-        "url": "creato/save"
+        "url": "user/save"
     },
 
     "sidemenu": [{

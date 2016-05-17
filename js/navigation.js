@@ -1,5 +1,5 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://localhost:1337/";
+var adminurl = "http://jppworld.in/";
 var imgurl = "http://192.168.1.122:81/upload/";
 var imgpath = imgurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
@@ -41,6 +41,7 @@ var navigationservice = angular.module('navigationservice', [])
       $http.post(adminurl + apiName,pagination).success(successCallback).error(errorCallback);
     },
     findOneProject: function(apiName,urlParams, successCallback, errorCallback) {
+      console.log(adminurl+apiName);
       $http.post(adminurl + apiName,urlParams).success(successCallback).error(errorCallback);
     },
     // saveApi: function(data, successCallback, errorCallback) {

@@ -38,6 +38,12 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'APICtrl'
     })
 
+    .state('onlyview', {
+        url: "/onlyview/:id",
+        templateUrl: "views/template.html",
+        controller: 'onlyViewPageCtrl'
+    })
+
     .state('page', {
         url: "/page/:jsonName",
         templateUrl: "views/template.html",
