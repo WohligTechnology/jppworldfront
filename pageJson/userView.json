@@ -7,11 +7,6 @@
         "name":"Name",
         "isSort":"",
         "tableRef":"name"
-      },
-      {
-        "name":"Army Name",
-        "isSort":"",
-        "tableRef":"armyname"
       }
 
     ],
@@ -39,12 +34,6 @@
             "value":"_id"
           }
         ]
-      },
-      {
-        "name":"print",
-        "icon":"print",
-        "color":"red",
-        "action":"print"
       }
     ],
     "button": [

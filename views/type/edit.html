@@ -51,10 +51,10 @@
                             <div ng-if="field.type=='image'">
 
 
-                                <label for="">Upload Image</label>
+                                <label for="">{{field.name}}</label>
 
-                                <!-- <img ng-src="{{field.image|uploadpath}}"> -->
-                                <upload-image ng-model="field.model"></upload-image>
+                                <img ng-src="{{field.image|uploadpath}}">
+                                <upload-image ng-model="field.model" no-view></upload-image>
 
 
                             </div>

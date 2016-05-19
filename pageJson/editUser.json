@@ -23,15 +23,6 @@
         "url": "",
         "model": "name"
     }, {
-        "name": "Army Name",
-        "type": "text",
-        "tableRef": "armyname",
-        "placeholder": "Enter armyname",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "armyname"
-    }, {
         "name": "Friend1",
         "type": "text",
         "tableRef": "friend1",
@@ -85,6 +76,60 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "friend6"
+    }, {
+        "name": "Friend 1 Image",
+        "type": "image",
+        "tableRef": "friend1image",
+        "placeholder": "Enter friend1image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend1image"
+    }, {
+        "name": "Friend 2 Image",
+        "type": "image",
+        "tableRef": "friend2image",
+        "placeholder": "Enter friend2image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend2image"
+    }, {
+        "name": "Friend 3 Image",
+        "type": "image",
+        "tableRef": "friend3image",
+        "placeholder": "Enter friend3image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend3image"
+    }, {
+        "name": "Friend 4 Image",
+        "type": "image",
+        "tableRef": "friend4image",
+        "placeholder": "Enter friend4image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend4image"
+    }, {
+        "name": "Friend 5 Image",
+        "type": "image",
+        "tableRef": "friend5image",
+        "placeholder": "Enter friend5image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend5image"
+    }, {
+        "name": "Friend 6 Image",
+        "type": "image",
+        "tableRef": "friend6image",
+        "placeholder": "Enter friend6image",
+        "id": "input7",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "friend6image"
     }],
     "action": [{
         "name": "submit",

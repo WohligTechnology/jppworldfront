@@ -1,5 +1,6 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://jppworld.in/";
+// var adminurl = "http://localhost:1337/";
+var adminurl = "http://jppworld.in:1337/";
 var imgurl = "http://192.168.1.122:81/upload/";
 var imgpath = imgurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
@@ -8,12 +9,12 @@ var navigationservice = angular.module('navigationservice', [])
   var navigation = [{
     name: "Users",
     classis: "active",
-    link: "#/users",
+    link: "#/page/userView",
     subnav: []
   }, {
-    name: "Projects",
+    name: "Questions",
     classis: "active",
-    link: "#/projects",
+    link: "#/page/viewQuestion",
     subnav: []
   }];
 
@@ -44,11 +45,14 @@ var navigationservice = angular.module('navigationservice', [])
       console.log(adminurl+apiName);
       $http.post(adminurl + apiName,urlParams).success(successCallback).error(errorCallback);
     },
-    // saveApi: function(data, successCallback, errorCallback) {
-    //   $http.post(adminURL + "api/save", data).success(successCallback).error(errorCallback);
-    // },
+    submitLogin: function(data, successCallback, errorCallback) {
+      $http.post(adminurl + "register/login", data).success(successCallback).error(errorCallback);
+    },
     deleteApi: function(data, successCallback, errorCallback) {
       $http.post(adminURL + "api/delete", data).success(successCallback).error(errorCallback);
+    },
+    logout: function( successCallback, errorCallback) {
+      $http.post(adminurl + "register/logout").success(successCallback).error(errorCallback);
     },
 
   };

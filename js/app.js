@@ -74,12 +74,15 @@ firstapp.filter('uploadpath', function() {
 
 firstapp.filter('getValue', function() {
     return function(input, keyVal) {
-          var keyArr = keyVal.split(".");
-          var returnValue = input;
-          _.each(keyArr, function(n) {
-              returnValue = returnValue[n];
-          });
-          return returnValue;
+        if (keyVal) {
+            var keyArr = keyVal.split(".");
+            var returnValue = input;
+            _.each(keyArr, function(n) {
+                returnValue = returnValue[n];
+            });
+            return returnValue;
+        }
+
     };
 });
 
@@ -95,7 +98,7 @@ firstapp.directive('imageonload', function() {
     };
 });
 
-firstapp.directive('uploadImage', function($http,$filter) {
+firstapp.directive('uploadImage', function($http, $filter) {
     return {
         templateUrl: 'views/directive/uploadFile.html',
         scope: {
@@ -112,19 +115,18 @@ firstapp.directive('uploadImage', function($http,$filter) {
             if (attrs.noView || attrs.noView === "") {
                 $scope.noShow = true;
             }
-            if($scope.model)
-            {
-              if(_.isArray($scope.model))
-              {
-                $scope.image=[];
-                _.each($scope.model,function(n) {
-                  $scope.image.push({url:$filter("uploadpath")(n)});
-                });
-              }
-              else {
-                $scope.image={};
-                $scope.image.url=$filter("uploadpath")($scope.model);
-              }
+            if ($scope.model) {
+                if (_.isArray($scope.model)) {
+                    $scope.image = [];
+                    _.each($scope.model, function(n) {
+                        $scope.image.push({
+                            url: $filter("uploadpath")(n)
+                        });
+                    });
+                } else {
+                    $scope.image = {};
+                    $scope.image.url = $filter("uploadpath")($scope.model);
+                }
 
             }
             if (attrs.inobj || attrs.inobj === "") {

@@ -4,10 +4,28 @@ var mockURL = adminURL + "callApi/";
 
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload'])
 
-.controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout) {
+.controller('LoginCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.menutitle = NavigationService.makeactive("Login");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+    $scope.successmsg = "";
+
+    $scope.user = '';
+    $scope.submitLogin = function(user) {
+        NavigationService.submitLogin(user, function(data) {
+            console.log(data);
+            if (data.value === true) {
+                $state.go("page", {
+                    jsonName: "userView"
+                });
+                $.jStorage.set("user", data);
+            } else if (data.value === false) {
+                $scope.successmsg = "Email or Password is wrong";
+            }
+        }, function() {
+            console.log("Fail");
+        });
+    };
 })
 
 .controller('UsersCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -22,7 +40,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('jsonViewCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter,$mdDialog) {
+.controller('jsonViewCtrl', function($scope, TemplateService, NavigationService, $timeout, $stateParams, $http, $state, $filter, $mdDialog) {
     //Used to name the .html file
     $scope.template = TemplateService.changecontent("users");
     $scope.menutitle = NavigationService.makeactive("Users");
@@ -106,6 +124,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             };
             NavigationService.findProjects($scope.apiName, pagination, function(data) {
                 $scope.json.tableData = data.data.data;
+                console.log($scope.json.tableData);
             }, function() {
                 console.log("Fail");
             });
@@ -116,7 +135,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     // ACTION
     $scope.performAction = function(action, result) {
-      console.log("in pa");
+        console.log("in pa");
         var pageURL = "";
         if (action.type == "onlyView") {
             console.log("onlyView");
@@ -454,7 +473,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             $scope.json.editData = data.data;
             console.log($scope.json.editData);
-            $scope.armyName=$scope.json.editData.user.armyName;
+            $scope.armyName = $scope.json.editData.user.armyName;
             console.log($scope.armyName);
         }, function() {
             console.log("Fail");
@@ -465,9 +484,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     // };
 })
 
-.controller('HeaderCtrl', function($scope, TemplateService) {
+.controller('HeaderCtrl', function($scope, TemplateService, NavigationService, $state) {
     $scope.template = TemplateService;
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
+    if ($.jStorage.get("user") === null) {
+        $state.go("login");
+    }
+    $scope.logOut = function() {
+        NavigationService.logout(function(data) {
+            console.log(data);
+            if (data.value === true) {
+                $.jStorage.flush();
+                $state.go("login");
+
+            } else if (data.value === false) {
+                $window.location.reload();
+            }
+        }, function() {
+            console.log("Fail");
+        });
+    };
 });
