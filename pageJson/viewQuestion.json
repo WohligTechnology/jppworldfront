@@ -51,9 +51,6 @@
     "apiCall": {
         "url": "question/findLimited",
         "params": ""
-    },
-    "create":{
-        "createButtonState":"page({jsonName:'createQuestion'})"
     }
 
 }

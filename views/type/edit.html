@@ -53,8 +53,9 @@
 
                                 <label for="">{{field.name}}</label>
 
-                                <img ng-src="{{field.image|uploadpath}}">
-                                <upload-image ng-model="field.model" no-view></upload-image>
+                                <!-- <img ng-src="{{field.image|uploadpath}}">{{json.editData.friend1image}} -->
+                                <img ng-src="{{json.editData[field.model]}}">
+                                <!-- <upload-image ng-model="field.model" no-view></upload-image> -->
 
 
                             </div>
