@@ -61,6 +61,51 @@
 		"validation": ["required", "trim", "unique"],
 		"url": "",
 		"model": "question5option"
+	},
+	{
+		"name": "Task 1: Speed Click ",
+		"type": "readonly",
+		"tableRef": "speedClick",
+		"id": "input6",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "speedClick"
+	},
+	{
+		"name": "Task 1: Speed Time ",
+		"type": "readonly",
+		"tableRef": "speedTime",
+		"id": "input7",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "speedTime"
+	},
+	{
+		"name": "Accuracy",
+		"type": "readonly",
+		"tableRef": "accuracy",
+		"id": "input8",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "accuracy"
+	},
+	{
+		"name": "Intelligence",
+		"type": "readonly",
+		"tableRef": "intelligence",
+		"id": "input9",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "intelligence"
+	},
+	{
+		"name": "Memory",
+		"type": "readonly",
+		"tableRef": "memory",
+		"id": "input10",
+		"validation": ["required", "trim", "unique"],
+		"url": "",
+		"model": "memory"
 	}],
 	"action": [ {
 		"name": "cancel",

@@ -4,10 +4,8 @@
             <strong>{{json.title}}</strong>
         </div>
         <div class="panel-body">
-
             <div class="row">
                 <div class="col-md-8">
-
                     <form name="plan">
                         <div class="form-group" ng-repeat="field in json.fields">
                             <!-- <div ng-repeat="field in json.editData track by $index"> -->
@@ -22,7 +20,7 @@
                             </div>
                             <!-- READONLY -->
                             <div ng-if="field.type=='readonly'">
-                                  <label for="{{field.id}}">{{field.name}}</label>
+                                <label for="{{field.id}}">{{field.name}}</label>
                                 <input ng-model="json.editData[field.model]" type={{field.type}} readonly=true class="form-control" id="{{field.id}}" placeholder="{{field.placeholder}}">
                             </div>
 
