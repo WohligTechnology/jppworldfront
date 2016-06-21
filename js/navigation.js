@@ -1,7 +1,7 @@
 // var adminurl = "http://blazen.io/";
 // var adminurl = "http://localhost:1337/";
-var adminurl = "http://jppworld.in:1337/";
-var imgurl = "http://192.168.1.122:81/upload/";
+var adminurl = "http://pantherworldadmin.jaipurpinkpanthers.com/";
+var imgurl = "http://pantherworldadmin.jaipurpinkpanthers.com/upload/";
 var imgpath = imgurl + "readFile";
 var navigationservice = angular.module('navigationservice', [])
 
