@@ -259,7 +259,7 @@ gulp.task('copy:wcss', function() {
 gulp.task('copy:fonts', function() {
   var gulpCopy = require('gulp-copy');
   return gulp.src("./fonts/**")
-    .pipe(gulpCopy("./production/"));
+    .pipe(gulpCopy("./production/w/"));
 });
 gulp.task('copy:pageJson', function() {
   var gulpCopy = require('gulp-copy');
