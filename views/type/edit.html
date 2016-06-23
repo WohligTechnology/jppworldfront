@@ -1,3 +1,18 @@
+<form name="plan">
+  <div>
+    <md-input-container class="md-block" ng-repeat="field in json.fields">
+            <div ng-if="field.type=='text' || field.type=='email'">
+              <label>{{field.name}}</label>
+              <input ng-model="json.editData[field.model]" type={{field.type}} name="{{field.name}}" id="{{field.id}}">
+              <!-- <div ng-messages="name.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+              </div> -->
+            </div>
+    </md-input-container>
+  </div>
+</form>
+
 <section>
     <div class="panel panel-default">
         <div class="panel-heading">

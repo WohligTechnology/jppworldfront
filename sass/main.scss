@@ -1,6 +1,6 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
-@import "../bower_components/angular-material/angular-material.css";
+@import "../bower_components/angular-material/angular-material.min.css";
 body {
 
 }
@@ -78,4 +78,16 @@ ng-md-icon {
 
 select {
   display:block;
+}
+.padlr16 {
+  padding: 0 16px;
+}
+.padr16 {
+  padding: 0 16px 0 0;
+}
+.ls-head {
+  font-weight: 700;
+}
+.text-right {
+  text-align: right;
 }
